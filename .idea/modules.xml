@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/svenscave.iml" filepath="$PROJECT_DIR$/.idea/modules/svenscave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/svenscave_main.iml" filepath="$PROJECT_DIR$/.idea/modules/svenscave_main.iml" group="svenscave" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/svenscave_test.iml" filepath="$PROJECT_DIR$/.idea/modules/svenscave_test.iml" group="svenscave" />
     </modules>
   </component>
 </project>
