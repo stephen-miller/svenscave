@@ -5,6 +5,9 @@
     <title>Hello World!</title>
 </head>
 <body>
+<div th:replace="fragments/navbar :: header">
+    <a>NAV BAR GOES UP HERE</a>
+</div>
 <div th:switch="${session.user.role}">
     <p th:case="'admin'">Hello [[${#httpServletRequest.remoteUser}]]! admin</p>
     <p th:case="'user'">Hello [[${#httpServletRequest.remoteUser}]]!  user</p>
