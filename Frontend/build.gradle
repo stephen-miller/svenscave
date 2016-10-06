@@ -28,12 +28,13 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-devtools')
-	//compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile("org.hibernate:hibernate-validator")
 	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('mysql:mysql-connector-java')
+	compile("org.apache.tomcat.embed:tomcat-embed-el")
 	compile("org.springframework.boot:spring-boot-starter-actuator")
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 task wrapper(type: Wrapper) {

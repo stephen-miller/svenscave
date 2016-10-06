@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add a new Address</title>
+</head>
+<body>
+<div>
+<a>Add a new Address!</a>
+<form action="#" th:action="@{/addressBookAddForm}" th:object="${address}" method="post">
+    <table>
+        <tr>
+            <td>Street:</td>
+            <td><input type="text" th:field="*{street}" /></td>
+            <td th:if="${#fields.hasErrors('street')}" th:errors="*{street}">Street Error</td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><input type="text" th:field="*{city}" /></td>
+            <td th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City Error</td>
+        </tr>
+        <tr>
+            <td>2 Digit State Code:</td>
+            <td><input type="text" th:field="*{city}" /></td>
+            <td th:if="${#fields.hasErrors('city')}" th:errors="*{city}">State Error</td>
+        </tr>
+        <tr>
+            <td>Zipcode:</td>
+            <td><input type="text" th:field="*{zipcode}" /></td>
+            <td th:if="${#fields.hasErrors('zipcode')}" th:errors="*{zipcode}">Zipcode Error</td>
+        </tr>
+        <tr>
+            <td>Zip+4:</td>
+            <td><input type="text" th:field="*{zipcodeExtender}" /></td>
+            <td th:if="${#fields.hasErrors('zipcodeExtender')}" th:errors="*{zipcodeExtender}">Zipcode+4 Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>
