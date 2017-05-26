@@ -32,16 +32,18 @@ public class Endpoint {
         return new ResponseEntity(body, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/savenewaddress/street/{street}/city/{city}/statecode/{statecode}/zipcode/{zipcode}/zipcodeext/{zipcodeext}", method= RequestMethod.GET, produces="application/json")
-    public ResponseEntity getAddressById(@PathVariable("street") String street,
+    @RequestMapping(value = "/savenewaddress/street/{street}/city/{city}/statecode/{statecode}/zipcode/{zipcode}/zipcodeext/{zipcodeext}", method= RequestMethod.POST, produces="application/json")
+    public ResponseEntity saveNewAddress(@PathVariable("street") String street,
                                          @PathVariable("city") String city,
                                          @PathVariable("statecode") String state,
                                          @PathVariable("zipcode") int zip,
                                          @PathVariable("zipcodeext") int zipExt){
         Address_row newAddress = new Address_row(street, city, state, zip, zipExt);
         dao.save(newAddress);
-        String body = "{id:"+newAddress.getId()+"}";
+        String body = gson.toJson(null);
         return new ResponseEntity(body, HttpStatus.OK);
     }
+
+
 
 }
